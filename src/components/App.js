@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom';
 import Home from "./Home";
 import News from "./News";
 import Contact from "./Contact";
@@ -15,9 +15,11 @@ function App() {
             {/* <li><a href='/'>Start</a></li>
             <li><a href='/news'>News</a></li>
             <li><a href='/contact'>Contact</a></li> */}
-            <li><Link to='/'>Start</Link></li>
-            <li><Link to='/news'>News</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
+            <li><NavLink to='/' exact activeClassName='home_selected' activeStyle={{
+                    backgroundColor: 'gray',
+                  }}>Start</NavLink></li>
+            <li><NavLink to='/news' activeClassName='news_selected'>News</NavLink></li>
+            <li><NavLink to='/contact' activeClassName='contact_selected'>Contact</NavLink></li>
             </ul>
           </nav>
         </header>
