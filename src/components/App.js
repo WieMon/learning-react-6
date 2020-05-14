@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
+import Home from "./Home";
+import News from "./News";
+import Contact from "./Contact";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div>
         <header>
           <nav>
@@ -21,8 +24,11 @@ function App() {
         <section>
           Hello
         </section>
+        <Route path ='/' exact component={Home} />
+        <Route path ='/news' component={News} />
+        <Route path ='/contact' component={Contact} />
       </div>
-    </BrowserRouter>
+    </Router>
     
   );
 }
