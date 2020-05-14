@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom';
+import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom';
 import Home from "./Home";
 import News from "./News";
 import Contact from "./Contact";
+import ErrorPage from "./ErrorPage";
 
 function App() {
   return (
@@ -26,9 +27,13 @@ function App() {
         <section>
           Hello
         </section>
-        <Route path ='/' exact component={Home} />
-        <Route path ='/news' component={News} />
-        <Route path ='/contact' component={Contact} />
+        <Switch>
+          <Route path ='/' exact component={Home} />
+          <Route path ='/news' component={News} />
+          <Route path ='/contact' component={Contact} />
+          <Route component={ErrorPage} />
+        </Switch>
+      
       </div>
     </Router>
     
